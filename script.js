@@ -4,38 +4,25 @@ const gif = document.querySelector(".gif");
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 const questionPrompt = document.querySelector(".question-prompt");
+function handleAccept() {
+    document.body.style.backgroundColor = "#fff0f5";
+    document.getElementById("main-content").innerHTML = `
+        <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="gif vui mừng">
+        <div style="font-size: 22px; color: #e75480; margin-top: 30px;">
+            Cảm ơn ông nhiều lắm, bạn trai của tui 💕🥹💥
+        </div>
+    `;
+}
 
-// Khi click vào nút "Được"
-yesBtn.addEventListener("click", () => {
-  question.innerHTML = "Cảm ơn, cảm ơn ông nhiều lắm 🥺";
-  gif.src = "https://media.giphy.com/media/vvc1dJPLEU2QOw9cXy/giphy.gif"; // Hoặc thay ảnh khác nếu muốn
+function handleDecline() {
+    document.body.style.backgroundColor = "#f8f8f8";
+    document.getElementById("main-content").innerHTML = `
+        <img class="gif" src="https://media.giphy.com/media/9Y5BbDSkSTiY8/giphy.gif" alt="gif buồn">
+        <div style="font-size: 20px; color: #444; margin-top: 30px; white-space: pre-line;">
+            Cảm ơn ông vì đã chơi trò chơi này.\n
+            Xin lỗi vì đã làm mất thời gian của ông.\n
+            Quên chuyện này đi nhé 😢
+        </div>
+    `;
+}
 
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-  questionPrompt.style.display = "none";
-});
-
-// Khi rê chuột vào nút "Không", nó chạy lung tung
-noBtn.addEventListener("mouseover", () => {
-  const noBtnRect = noBtn.getBoundingClientRect();
-  const maxX = window.innerWidth - noBtnRect.width;
-  const maxY = window.innerHeight - noBtnRect.height;
-
-  const randomX = Math.floor(Math.random() * maxX);
-  const randomY = Math.floor(Math.random() * maxY);
-
-  noBtn.style.position = "absolute";
-  noBtn.style.left = randomX + "px";
-  noBtn.style.top = randomY + "px";
-});
-
-// Nếu bạn ấy click được vào nút "Không"
-noBtn.addEventListener("click", () => {
-  question.innerHTML =
-    "Cảm ơn đã trả lời câu hỏi của tui. Xin lỗi vì đã làm tốn thời gian của ông. Quên chuyện này đi nhé.";
-  gif.src = "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif"; // Ảnh buồn buồn
-
-  yesBtn.style.display = "none";
-  noBtn.style.display = "none";
-  questionPrompt.style.display = "none";
-});
