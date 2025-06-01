@@ -10,12 +10,63 @@
     <div class="wrapper">
         <h2 class="question">Tui thích ông rất nhiều luôn í👉👈</h2>
         <h4 class="question-prompt">Ông có thể đồng ý làm bạn trai tui được không?</h4>
-        <img class="gif" alt="gif" src="https://media.giphy.com/media/PcCh9x9Pz5d2CriuMQ/giphy.gif"/>
-        <div class="btn-group">
-            <button class="yes-btn">Không iu emm😠</button>
-            <button class="no-btn">có iuu em😽</button>
-        </div>
+       <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lựa chọn của em</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fffafc;
+        }
+        .gif {
+            width: 300px;
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        .btn-group {
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            margin: 15px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .accept-btn {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .decline-btn {
+            background-color: #999;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+    <img class="gif" alt="gif" src="https://media.giphy.com/media/PcCh9x9Pz5d2CriuMQ/giphy.gif"/>
+    
+    <div class="btn-group">
+        <button class="accept-btn" onclick="handleAccept()">Đồng ý</button>
+        <button class="decline-btn" onclick="handleDecline()">Xin lỗi mình không thể</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function handleAccept() {
+            alert("Cảm ơn ông nhiều lắm, bạn trai của tui 💕🥹");
+        }
+
+        function handleDecline() {
+            alert("Cảm ơn ông vì đã chơi trò chơi này.\nXin lỗi vì đã làm mất thời gian của ông.\nQuên chuyện này đi nhé 😢");
+        }
+    </script>
 </body>
 </html>
